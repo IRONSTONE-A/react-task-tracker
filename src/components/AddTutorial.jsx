@@ -8,11 +8,13 @@ const AddTutorial = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // return(
-        //     // alert({title , desc})
-        // )
+        return(
+            alert({title , desc})
+        )
+      
     }
     const handleTitleChange = (e) => {
+        console.log(e.target.value)
         setTitle(e.target.value)
     }
 
@@ -20,7 +22,7 @@ const AddTutorial = () => {
         console.log(e.target.value)
         setDesc(e.target.value)
     }
-
+   
   return (
     <div>
       <h1>Add Your Tutorial</h1>
@@ -28,7 +30,7 @@ const AddTutorial = () => {
         <Form.Group className="mb-4" controlId="formBasicTitle">
           <Form.Label>Title</Form.Label>
           <br />
-          <Form.Control  type="text" placeholder="Enter Your Title" onChange={handleTitleChange} /> <br />
+          <Form.Control   type="text" placeholder="Enter Your Title" onChange={handleTitleChange} /> <br />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicDesc">
@@ -38,7 +40,7 @@ const AddTutorial = () => {
           <br />
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
+        <Button  className="btn btn-danger" variant="primary" type="submit" onClick={handleSubmit}>
           Submit
         </Button>
       </Form>
