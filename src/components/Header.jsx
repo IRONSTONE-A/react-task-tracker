@@ -1,11 +1,12 @@
-import AddTaskForm from './AddTaskForm';
-import { useState } from 'react';
+import AddTaskForm from "./AddTaskForm";
+import { useState } from "react";
 
-const Header = ({ tasks, setTasks }) => {
+const Header = ({tasks,setTasks}) => {
+// const Header = ({tasks,setTasks,editTask,editDone,setEditDone}) => {
   const [show, setShow] = useState(false);
   const [btnStyle, setBtnStyle] = useState({
-    name: 'SHOW ADD TASK BAR',
-    bgColor: 'purple',
+    name: "Show Add Task Bar",
+    bgColor: "#F28705",
   });
 
   //! React, default olarak state'leri hemen degistirmeyebilir.
@@ -19,30 +20,34 @@ const Header = ({ tasks, setTasks }) => {
   const handleShow = () => {
     if (show) {
       setBtnStyle({
-        name: 'SHOW ADD TASK BAR',
-        bgColor: 'purple',
+        name: "Show Add Task Bar",
+        bgColor: "#F28705",
       });
     } else {
       setBtnStyle({
-        name: 'CLOSE ADD TASK BAR',
-        bgColor: 'red',
+        name: "Close Add Task Bar",
+        bgColor: "cadetblue",
       });
     }
     setShow(!show);
   };
-  console.log(show);
+  // console.log(show);
+
+// console.log(editTask);
+
+
+
+
+
 
   return (
     <header className="header">
       <h1>TASK TRACKER</h1>
-      <button
-        onClick={handleShow}
-        className="btn"
-        style={{ backgroundColor: btnStyle.bgColor }}
-      >
+      <button className="btn" style={{backgroundColor:btnStyle.bgColor}} onClick={handleShow}>
         {btnStyle.name}
       </button>
-      {show && <AddTaskForm tasks={tasks} setTasks={setTasks} />}
+      {show && <AddTaskForm tasks={tasks} setTasks={setTasks}/>}
+      {/* <AddTaskForm tasks={tasks} setTasks={setTasks} /> */}
     </header>
   );
 };

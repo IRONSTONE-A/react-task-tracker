@@ -1,18 +1,23 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const AddTaskForm = ({ tasks, setTasks }) => {
-  const [task, setTask] = useState('');
-  const [day, setDay] = useState('');
+// const AddTaskForm = ({ tasks, setTasks, editTask, editDone, setEditDone }) => {
+  const [task, setTask] = useState("");
+  const [day, setDay] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = new Date().getTime();
     const newTask = { id: id, task: task, day: day, isDone: false };
     setTasks([...tasks, newTask]);
-    setTask('');
-    setDay('');
+    setTask("");
+    setDay("");
   };
+  // console.log(editTask);
+  
+ 
 
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -22,16 +27,16 @@ const AddTaskForm = ({ tasks, setTasks }) => {
             type="text"
             name="task"
             id="task"
-            placeholder="add task"
+            placeholder="Add Task"
             value={task}
             onChange={(e) => setTask(e.target.value)}
             required
           />
         </div>
         <div className="form-control">
-          <label htmlFor="day">Day & Time</label>
+          <label htmlFor="day">Date && Time</label>
           <input
-            type="date"
+            type="datetime-local"
             name="day"
             id="day"
             value={day}
@@ -40,8 +45,8 @@ const AddTaskForm = ({ tasks, setTasks }) => {
           />
         </div>
         <div>
-          <button className="btn btn-submit" type="submit">
-            Submit
+          <button type="submit" className="btn btn-submit">
+            Save Task
           </button>
         </div>
       </form>
