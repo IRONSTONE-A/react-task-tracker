@@ -14,6 +14,7 @@ step 4: open localhost with yarn start command..
   - <b>useState</b>
   - <b>useEffect</b>
   - <b>Bootstrapt</b>
+  - <b>browser localstorage</b>
   - import/export
   - <b>Props</b>
   - React <b>Developer Tool</b>
